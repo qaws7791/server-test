@@ -4,25 +4,26 @@
 
 ## Test Results
 
-|        | type                                       | transactions per second |      |
-| ------ | :----------------------------------------- | ----------------------- | ---- |
-| Nodejs | nest(with express)                         | 7000                    |      |
-|        | [express](./nodejs/express.js)             | 7500                    |      |
-|        | [native](./nodejs/native.js)               | 25000                   |      |
-|        | [fastify](./nodejs/fastify.js)             | 28000                   |      |
-|        | [hyper-express](./nodejs/hyper-express.js) | 45000                   |      |
-| Bun    | [native](./bun/native.ts)                  | 46000                   |      |
-| Go     | [native(net/http)](./golang/nethttp.go)    | 60000                   |      |
-| Rust   | [native](./rust/native)                    | not yet                 |      |
-|        | [actix](./rust/actix)                      | not yet                 |      |
+|          | type               | transactions per second |      |
+| -------- | :----------------- | ----------------------- | ---- |
+| **Node** | next(app router)   | 1700                    |      |
+|          | nest(with express) | 7000                    |      |
+|          | express            | 7500                    |      |
+|          | native             | 25000                   |      |
+|          | fastify            | 28000                   |      |
+|          | hyper-express      | 45000                   |      |
+| **Bun**  | native             | 46000                   |      |
+| **Go**   | native(net/http)   | 60000                   |      |
+| **Rust** | native             | not yet                 |      |
+|          | actix              | not yet                 |      |
 
 ```mermaid
 xychart-beta
-    title "Simple Throughput Test"
-    x-axis [express, "nodejs(native)", fastify, hyper-express, "bun(native)", "go(native)"]
-    y-axis "TPC(transactions per second)"
-    bar [7500, 25000, 28000, 45000, 46000, 60000]
-    line [7500, 25000, 28000, 45000, 46000, 60000]
+    title "Throughput Test"
+    x-axis [next, nest, express, "nodejs(native)", fastify, hyper-express, "bun(native)", "go(native)"]
+    y-axis "TPC(transactions/second)"
+    bar [1700, 7000, 7500, 25000, 28000, 45000, 46000, 60000]
+    line [1700, 7000, 7500, 25000, 28000, 45000, 46000, 60000]
 ```
 
 ## Test Environment 
